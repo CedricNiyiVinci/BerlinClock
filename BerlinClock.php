@@ -11,7 +11,7 @@ Class BerlinClock {
     }
     // 23:59:59 -> 59
     private function extractMinutesFromTimestamp($timestamp):int{
-        return (int) substr($timestamp,3,4);
+        return (int) substr($timestamp,3,2);
 }
 
     public function fiveMinutesRow($parameter):string{
@@ -57,12 +57,13 @@ Class BerlinClock {
 
     public function singleHoursRow($parameter):string{
         if($this->extractHoursFromTimestamp($parameter)==0) return "OOOO";
-        return "RRRO";
+        if($this->extractHoursFromTimestamp($parameter)==23) return "RRRO";
+        return "RROO";
     }
 
     // 23:59:59 -> 23
     private function extractHoursFromTimestamp($timestamp):int
     {
-        return (int)substr($timestamp, 0, 1);
+        return (int)substr($timestamp, 0, 2);
     }
 }
