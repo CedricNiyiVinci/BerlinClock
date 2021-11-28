@@ -1,1 +1,5 @@
 <?php
+
+Class BerlinClock {
+
+}
