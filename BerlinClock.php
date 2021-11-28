@@ -56,7 +56,7 @@ Class BerlinClock {
     }
 
     public function singleHoursRow($parameter):string{
-        if($this->extractHoursFromTimestamp($parameter)==0) return "OOOO";
+        if($this->extractHoursFromTimestamp($parameter)==0 || $this->extractHoursFromTimestamp($parameter)==5) return "OOOO";
         if($this->extractHoursFromTimestamp($parameter)==2) return "RROO";
         if($this->extractHoursFromTimestamp($parameter)==23 || $this->extractHoursFromTimestamp($parameter)==8) return "RRRO";
 
