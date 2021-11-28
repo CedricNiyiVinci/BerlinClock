@@ -6,8 +6,8 @@ Class BerlinClock {
         if($this->extractMinutesFromTimestamp($parameter)%5==0) return "OOOO";
         if($this->extractMinutesFromTimestamp($parameter)%5==4) return "YYYY";
         if($this->extractMinutesFromTimestamp($parameter)%5==2) return "YYOO";
-        if($this->extractMinutesFromTimestamp($parameter)==51) return "YOOO";
-        return "YYYO";
+        if($this->extractMinutesFromTimestamp($parameter)%5==1) return "YOOO";
+        return "YYYO";// mod 5 equals 3
     }
     // 23:59:59 -> 59
     private function extractMinutesFromTimestamp($timestamp):int{
