@@ -68,4 +68,9 @@ Class BerlinClock {
     {
         return (int)substr($timestamp, 0, 2);
     }
+
+    public function fiveHoursRow($parameter):string{
+
+        return "OOOO";
+    }
 }
