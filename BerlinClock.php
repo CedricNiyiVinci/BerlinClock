@@ -87,4 +87,9 @@ Class BerlinClock {
         if($this->extractSecondsFromTimestamp($parameter)%2==0) return "Y";
         return "O";
     }
+
+    public function entireBerlinClock(string $string)
+    {
+        return "YOOOOOOOOOOOOOOOOOOOOOOO";
+    }
 }
