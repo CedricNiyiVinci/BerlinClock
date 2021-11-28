@@ -440,4 +440,14 @@ class BerlinClockTest extends TestCase
         //Assert
         $this ->assertEquals("Y" ,$actual);
     }
+
+    // given "23:48:59"
+    public function testSecondsLampGiven59SecondsReturnO(){
+        //Arrange
+        $berlinClock = new BerlinClock();
+        //Act
+        $actual = $berlinClock->secondsLamp("23:48:59");
+        //Assert
+        $this ->assertEquals("O" ,$actual);
+    }
 }
