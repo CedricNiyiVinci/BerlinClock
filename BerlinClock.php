@@ -84,7 +84,7 @@ Class BerlinClock {
 
 
     public function secondsLamp($parameter):string{
-        if($this->extractSecondsFromTimestamp($parameter)==0) return "Y";
+        if($this->extractSecondsFromTimestamp($parameter)%2==0) return "Y";
         return "O";
     }
 }
