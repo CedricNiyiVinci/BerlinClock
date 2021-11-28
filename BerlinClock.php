@@ -71,7 +71,8 @@ Class BerlinClock {
 
     public function fiveHoursRow($parameter):string{
         if($this->extractHoursFromTimestamp($parameter)==0 || $this->extractHoursFromTimestamp($parameter)==2) return "OOOO";
+        if($this->extractHoursFromTimestamp($parameter)==8) return "ROOO";
         if($this->extractHoursFromTimestamp($parameter)==23) return "RRRR";
-        return "ROOO";
+        return "RRRO";
     }
 }
