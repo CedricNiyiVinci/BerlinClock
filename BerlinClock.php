@@ -15,18 +15,44 @@ Class BerlinClock {
 }
 
     public function fiveMinutesRow($parameter):string{
-
-        if($this->extractMinutesFromTimestamp($parameter)==0 || $this->extractMinutesFromTimestamp($parameter)==4) return "OOOOOOOOOOO";
-        if($this->extractMinutesFromTimestamp($parameter)==5 || $this->extractMinutesFromTimestamp($parameter)==7)return "YOOOOOOOOOO";
-        if($this->extractMinutesFromTimestamp($parameter)==10 || $this->extractMinutesFromTimestamp($parameter)==14)return "YYOOOOOOOOO";
-        if($this->extractMinutesFromTimestamp($parameter)==15 || $this->extractMinutesFromTimestamp($parameter)==16)return "YYROOOOOOOO";
-        if($this->extractMinutesFromTimestamp($parameter)==20 || $this->extractMinutesFromTimestamp($parameter)==23 )return "YYRYOOOOOOO";
-        if($this->extractMinutesFromTimestamp($parameter)==25 || $this->extractMinutesFromTimestamp($parameter)==29)return "YYRYYOOOOOO";
-        if($this->extractMinutesFromTimestamp($parameter)==30 || $this->extractMinutesFromTimestamp($parameter)==31) return "YYRYYROOOOO";
-        if($this->extractMinutesFromTimestamp($parameter)==35 || $this->extractMinutesFromTimestamp($parameter)==37) return "YYRYYRYOOOO";
-        if($this->extractMinutesFromTimestamp($parameter)==40 || $this->extractMinutesFromTimestamp($parameter)==42) return "YYRYYRYYOOO";
-        if($this->extractMinutesFromTimestamp($parameter)==45 || $this->extractMinutesFromTimestamp($parameter)==49) return "YYRYYRYYROO";
-        if($this->extractMinutesFromTimestamp($parameter)==50 || $this->extractMinutesFromTimestamp($parameter)==54)return "YYRYYRYYRYO";
-        return "YYRYYRYYRYY";
+        $parameterInt = $this->extractMinutesFromTimestamp($parameter);
+        return $this->strictlyLessThan20Minutes($parameterInt).$this->between20and34Minutes($parameterInt).
+            $this->between35and49Minutes($parameterInt).$this->between50and59Minutes($parameterInt);
     }
+
+    private function strictlyLessThan20Minutes($parameter):string{
+        if($parameter>=0 && $parameter<5)
+            return "OOO";
+        if($parameter>=5 && $parameter<10)
+            return "YOO";
+        if($parameter>=10 && $parameter<15)
+            return "YYO";
+        return "YYR";
+    }
+
+    private function between20and34Minutes($parameter):string{
+        if ($parameter<20) return "OOO";
+        if($parameter>=20 && $parameter<25)
+            return "YOO";
+        if($parameter>=25 && $parameter<30)
+            return "YYO";
+        return "YYR";
+    }
+
+    private function between35and49Minutes($parameter):string{
+        if ($parameter<35) return "OOO";
+        if($parameter>=35 && $parameter<40)
+            return "YOO";
+        if($parameter>=40 && $parameter<45)
+            return "YYO";
+        return "YYR";
+    }
+
+    private function between50and59Minutes($parameter):string{
+        if ($parameter<50) return "OO";
+        if($parameter>=50 && $parameter<55)
+            return "YO";
+        return "YY";
+    }
+
 }
