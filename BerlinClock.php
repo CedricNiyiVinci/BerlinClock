@@ -13,4 +13,9 @@ Class BerlinClock {
     private function extractMinutesFromTimestamp($timestamp):int{
         return (int) substr($timestamp,3,4);
 }
+
+    public function fiveMinutesRow()
+    {
+        return "OOOOOOOOOOO";
+    }
 }
