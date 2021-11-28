@@ -5,6 +5,8 @@ use PHPUnit\Framework\TestCase;
 require "BerlinClock.php";
 class BerlinClockTest extends TestCase
 {
+    // test line of minute
+
     // given "00:00:00"
     public function testSingleMinutesRowGiven0MinutesReturnOOOO(){
         //Arrange
@@ -44,4 +46,16 @@ class BerlinClockTest extends TestCase
         //Assert
         $this ->assertEquals("YYYY" ,$actual);
     }
+    // given "12:35:00"
+    public function testSingleMinutesRowGiven55MinutesReturnOOOO(){
+        //Arrange
+        $berlinClock = new BerlinClock();
+        //Act
+        $actual = $berlinClock->singleMinutesRow("13:55:00");
+        //Assert
+        $this ->assertEquals("OOOO" ,$actual);
+    }
+
+
+    // test line of cinq minutes
 }
