@@ -59,8 +59,9 @@ Class BerlinClock {
         if($this->extractHoursFromTimestamp($parameter)==0 || $this->extractHoursFromTimestamp($parameter)==5) return "OOOO";
         if($this->extractHoursFromTimestamp($parameter)==2) return "RROO";
         if($this->extractHoursFromTimestamp($parameter)==23 || $this->extractHoursFromTimestamp($parameter)==8) return "RRRO";
+        if($this->extractHoursFromTimestamp($parameter)==14) return "RROO";
 
-        return "RRRR";
+        return "ROOO";
     }
 
     // 23:59:59 -> 23
