@@ -55,8 +55,14 @@ Class BerlinClock {
         return "YY";
     }
 
-    public function singleHoursRow():string{
-        return "OOOO";
+    public function singleHoursRow($parameter):string{
+        if($this->extractHoursFromTimestamp($parameter)==0) return "OOOO";
+        return "RRRO";
     }
 
+    // 23:59:59 -> 23
+    private function extractHoursFromTimestamp($timestamp):int
+    {
+        return (int)substr($timestamp, 0, 1);
+    }
 }
