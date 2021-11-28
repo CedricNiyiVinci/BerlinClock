@@ -10,7 +10,7 @@ Class BerlinClock {
         return "YYYO";
     }
     // 23:59:59 -> 59
-    public function extractMinutesFromTimestamp($timestamp):int{
+    private function extractMinutesFromTimestamp($timestamp):int{
         return (int) substr($timestamp,3,4);
 }
 }
