@@ -88,8 +88,9 @@ Class BerlinClock {
         return "O";
     }
 
-    public function entireBerlinClock(string $string)
+    public function entireBerlinClock($parameter):string
     {
-        return "YOOOOOOOOOOOOOOOOOOOOOOO";
+        return $this->secondsLamp($parameter).$this->fiveHoursRow($parameter).$this->singleHoursRow($parameter).
+               $this->fiveMinutesRow($parameter).$this->singleMinutesRow($parameter) ;
     }
 }
