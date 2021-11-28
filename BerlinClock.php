@@ -55,4 +55,8 @@ Class BerlinClock {
         return "YY";
     }
 
+    public function singleHoursRow():string{
+        return "OOOO";
+    }
+
 }
