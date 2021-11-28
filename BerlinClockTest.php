@@ -130,6 +130,17 @@ class BerlinClockTest extends TestCase
         $this ->assertEquals("YOOOOOOOOOO" ,$actual);
     }
 
+// given "14:10:00"
+    public function testFiveMinutesRowGiven10MinutesReturnYYOOOOOOOOO(){
+        //Arrange
+        $berlinClock = new BerlinClock();
+        //Act
+        $actual = $berlinClock->fiveMinutesRow("14:10:00");
+        //Assert
+        $this ->assertEquals("YYOOOOOOOOO" ,$actual);
+    }
+
+
     // given "12:23:00"
     public function testFiveMinutesRowGiven23MinutesReturnYYRYOOOOOOO(){
         //Arrange
