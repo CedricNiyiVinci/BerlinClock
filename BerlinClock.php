@@ -23,9 +23,10 @@ Class BerlinClock {
         if($this->extractMinutesFromTimestamp($parameter)==20 || $this->extractMinutesFromTimestamp($parameter)==23 )return "YYRYOOOOOOO";
         if($this->extractMinutesFromTimestamp($parameter)==25 || $this->extractMinutesFromTimestamp($parameter)==29)return "YYRYYOOOOOO";
         if($this->extractMinutesFromTimestamp($parameter)==30 || $this->extractMinutesFromTimestamp($parameter)==31) return "YYRYYROOOOO";
+        if($this->extractMinutesFromTimestamp($parameter)==35 || $this->extractMinutesFromTimestamp($parameter)==37) return "YYRYYRYOOOO";
         if($this->extractMinutesFromTimestamp($parameter)==59 )return "YYRYYRYYRYY";
 
 
-        return "YYRYYRYOOOO";
+        return "YYRYYRYYOOO";
     }
 }
